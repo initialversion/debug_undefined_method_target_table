@@ -8,6 +8,10 @@ class Client < ApplicationRecord
 
   # Indirect associations
 
+  has_many   :designers,
+             :through => :projects,
+             :source => :designers
+
   # Validations
 
   # Include default devise modules. Others available are:

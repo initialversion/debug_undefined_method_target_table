@@ -6,6 +6,10 @@ class Designer < ApplicationRecord
 
   # Indirect associations
 
+  has_many   :clients,
+             :through => :projects,
+             :source => :clients
+
   has_many   :projects,
              :through => :assignments,
              :source => :project
