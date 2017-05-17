@@ -8,6 +8,10 @@ class Client < ApplicationRecord
 
   # Indirect associations
 
+  has_many   :projects,
+             :through => :engagements,
+             :source => :project
+
   has_many   :designers,
              :through => :projects,
              :source => :designers

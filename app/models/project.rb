@@ -12,6 +12,10 @@ class Project < ApplicationRecord
 
   # Indirect associations
 
+  has_many   :clients,
+             :through => :engagements,
+             :source => :client
+
   has_many   :companies,
              :through => :clients,
              :source => :company
