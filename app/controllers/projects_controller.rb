@@ -6,6 +6,9 @@ class ProjectsController < ApplicationController
   end
 
   def show
+    @engagement = Engagement.new
+    @assignment = Assignment.new
+    @item = Item.new
     @project = Project.find(params[:id])
 
     render("projects/show.html.erb")
