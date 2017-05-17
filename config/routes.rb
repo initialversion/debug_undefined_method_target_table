@@ -1,4 +1,11 @@
 Rails.application.routes.draw do
+  devise_for :clients
+  # Routes for the Client resource:
+  # READ
+  get "/clients", :controller => "clients", :action => "index"
+  get "/clients/:id", :controller => "clients", :action => "show"
+
+
   # Routes for the Assignment resource:
   # CREATE
   get "/assignments/new", :controller => "assignments", :action => "new"
