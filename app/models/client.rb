@@ -1,6 +1,9 @@
 class Client < ApplicationRecord
   # Direct associations
 
+  has_many   :engagements,
+             :dependent => :destroy
+
   belongs_to :company
 
   # Indirect associations
