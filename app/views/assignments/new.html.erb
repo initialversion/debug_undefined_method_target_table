@@ -33,7 +33,7 @@
           Designer
         </label>
 
-        <input type="text" id="designer_id" name="designer_id" placeholder="Designer" class="form-control" value="<%= @assignment.designer_id %>">
+        <%= select_tag(:designer_id, options_from_collection_for_select(Designer.all, :id, :email, @assignment.designer_id), :class => "form-control") %>
       </div>
 
       <button class="btn btn-success">
