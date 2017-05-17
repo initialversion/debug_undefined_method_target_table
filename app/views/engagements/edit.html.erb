@@ -1,0 +1,46 @@
+<!-- Validation failure messages -->
+<% if @engagement.errors.any? %>
+  <% @engagement.errors.full_messages.each do |message| %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<div class="page-header">
+  <h3>Edit Engagement #<%= @engagement.id %></h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <form action="/update_engagement/<%= @engagement.id %>" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for project_id -->
+      <div class="form-group">
+        <label for="project_id" class="control-label">
+          Project
+        </label>
+
+        <input type="text" id="project_id" name="project_id" placeholder="Project" class="form-control" value="<%= @engagement.project_id %>">
+      </div>
+
+      <!-- Label and input for client_id -->
+      <div class="form-group">
+        <label for="client_id" class="control-label">
+          Client
+        </label>
+
+        <input type="text" id="client_id" name="client_id" placeholder="Client" class="form-control" value="<%= @engagement.client_id %>">
+      </div>
+
+      <button class="btn btn-warning">
+        Update Engagement
+      </button>
+      or
+      <a href="/engagements/<%= @engagement.id %>">Cancel</a>
+    </form>
+  </div>
+</div>

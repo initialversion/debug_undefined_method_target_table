@@ -1,4 +1,21 @@
 Rails.application.routes.draw do
+  # Routes for the Engagement resource:
+  # CREATE
+  get "/engagements/new", :controller => "engagements", :action => "new"
+  post "/create_engagement", :controller => "engagements", :action => "create"
+
+  # READ
+  get "/engagements", :controller => "engagements", :action => "index"
+  get "/engagements/:id", :controller => "engagements", :action => "show"
+
+  # UPDATE
+  get "/engagements/:id/edit", :controller => "engagements", :action => "edit"
+  post "/update_engagement/:id", :controller => "engagements", :action => "update"
+
+  # DELETE
+  get "/delete_engagement/:id", :controller => "engagements", :action => "destroy"
+  #------------------------------
+
   devise_for :clients
   # Routes for the Client resource:
   # READ
