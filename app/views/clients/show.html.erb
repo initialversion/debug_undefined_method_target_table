@@ -29,3 +29,96 @@
     </div>
   </div>
 </div>
+
+<!-- A Client has many engagements -->
+
+<div class="row">
+  <div class="col-md-12">
+    <ul class="list-group">
+      <li class="list-group-item list-group-item-info">
+        Engagements
+      </li>
+
+      <% @client.engagements.each do |engagement| %>
+        <li class="list-group-item">
+          <a href="/engagements/<%= engagement.id %>">
+            <%= engagement.created_at %>
+          </a>
+          <div class="btn-group btn-group-xs pull-right">
+            <a href="/engagements/<%= engagement.id %>" class="btn btn-primary">
+              <i class="fa fa-search-plus"></i>
+            </a>
+            <a href="/engagements/<%= engagement.id %>/edit" class="btn btn-warning">
+              <i class="fa fa-edit"></i>
+            </a>
+            <a href="/delete_engagement/<%= engagement.id %>" class="btn btn-danger" rel="nofollow">
+              <i class="fa fa-trash-o"></i>
+            </a>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+
+<!-- A Client has many designers -->
+
+<div class="row">
+  <div class="col-md-12">
+    <ul class="list-group">
+      <li class="list-group-item list-group-item-info">
+        Designers
+      </li>
+
+      <% @client.designers.each do |designer| %>
+        <li class="list-group-item">
+          <a href="/designers/<%= designer.id %>">
+            <%= designer.email %>
+          </a>
+          <div class="btn-group btn-group-xs pull-right">
+            <a href="/designers/<%= designer.id %>" class="btn btn-primary">
+              <i class="fa fa-search-plus"></i>
+            </a>
+            <a href="/designers/<%= designer.id %>/edit" class="btn btn-warning">
+              <i class="fa fa-edit"></i>
+            </a>
+            <a href="/delete_designer/<%= designer.id %>" class="btn btn-danger" rel="nofollow">
+              <i class="fa fa-trash-o"></i>
+            </a>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+
+<!-- A Client has many projects -->
+
+<div class="row">
+  <div class="col-md-12">
+    <ul class="list-group">
+      <li class="list-group-item list-group-item-info">
+        Projects
+      </li>
+
+      <% @client.projects.each do |project| %>
+        <li class="list-group-item">
+          <a href="/projects/<%= project.id %>">
+            <%= project.title %>
+          </a>
+          <div class="btn-group btn-group-xs pull-right">
+            <a href="/projects/<%= project.id %>" class="btn btn-primary">
+              <i class="fa fa-search-plus"></i>
+            </a>
+            <a href="/projects/<%= project.id %>/edit" class="btn btn-warning">
+              <i class="fa fa-edit"></i>
+            </a>
+            <a href="/delete_project/<%= project.id %>" class="btn btn-danger" rel="nofollow">
+              <i class="fa fa-trash-o"></i>
+            </a>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>

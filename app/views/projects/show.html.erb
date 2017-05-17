@@ -35,3 +35,189 @@
     </div>
   </div>
 </div>
+
+<!-- A Project has many items -->
+
+<div class="row">
+  <div class="col-md-12">
+    <ul class="list-group">
+      <li class="list-group-item list-group-item-info">
+        Items
+      </li>
+
+      <% @project.items.each do |item| %>
+        <li class="list-group-item">
+          <a href="/items/<%= item.id %>">
+            <%= item.project_id %>
+          </a>
+          <div class="btn-group btn-group-xs pull-right">
+            <a href="/items/<%= item.id %>" class="btn btn-primary">
+              <i class="fa fa-search-plus"></i>
+            </a>
+            <a href="/items/<%= item.id %>/edit" class="btn btn-warning">
+              <i class="fa fa-edit"></i>
+            </a>
+            <a href="/delete_item/<%= item.id %>" class="btn btn-danger" rel="nofollow">
+              <i class="fa fa-trash-o"></i>
+            </a>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+
+<!-- A Project has many assignments -->
+
+<div class="row">
+  <div class="col-md-12">
+    <ul class="list-group">
+      <li class="list-group-item list-group-item-info">
+        Assignments
+      </li>
+
+      <% @project.assignments.each do |assignment| %>
+        <li class="list-group-item">
+          <a href="/assignments/<%= assignment.id %>">
+            <%= assignment.project_id %>
+          </a>
+          <div class="btn-group btn-group-xs pull-right">
+            <a href="/assignments/<%= assignment.id %>" class="btn btn-primary">
+              <i class="fa fa-search-plus"></i>
+            </a>
+            <a href="/assignments/<%= assignment.id %>/edit" class="btn btn-warning">
+              <i class="fa fa-edit"></i>
+            </a>
+            <a href="/delete_assignment/<%= assignment.id %>" class="btn btn-danger" rel="nofollow">
+              <i class="fa fa-trash-o"></i>
+            </a>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+
+<!-- A Project has many engagements -->
+
+<div class="row">
+  <div class="col-md-12">
+    <ul class="list-group">
+      <li class="list-group-item list-group-item-info">
+        Engagements
+      </li>
+
+      <% @project.engagements.each do |engagement| %>
+        <li class="list-group-item">
+          <a href="/engagements/<%= engagement.id %>">
+            <%= engagement.created_at %>
+          </a>
+          <div class="btn-group btn-group-xs pull-right">
+            <a href="/engagements/<%= engagement.id %>" class="btn btn-primary">
+              <i class="fa fa-search-plus"></i>
+            </a>
+            <a href="/engagements/<%= engagement.id %>/edit" class="btn btn-warning">
+              <i class="fa fa-edit"></i>
+            </a>
+            <a href="/delete_engagement/<%= engagement.id %>" class="btn btn-danger" rel="nofollow">
+              <i class="fa fa-trash-o"></i>
+            </a>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+
+<!-- A Project has many designers -->
+
+<div class="row">
+  <div class="col-md-12">
+    <ul class="list-group">
+      <li class="list-group-item list-group-item-info">
+        Designers
+      </li>
+
+      <% @project.designers.each do |designer| %>
+        <li class="list-group-item">
+          <a href="/designers/<%= designer.id %>">
+            <%= designer.email %>
+          </a>
+          <div class="btn-group btn-group-xs pull-right">
+            <a href="/designers/<%= designer.id %>" class="btn btn-primary">
+              <i class="fa fa-search-plus"></i>
+            </a>
+            <a href="/designers/<%= designer.id %>/edit" class="btn btn-warning">
+              <i class="fa fa-edit"></i>
+            </a>
+            <a href="/delete_designer/<%= designer.id %>" class="btn btn-danger" rel="nofollow">
+              <i class="fa fa-trash-o"></i>
+            </a>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+
+<!-- A Project has many companies -->
+
+<div class="row">
+  <div class="col-md-12">
+    <ul class="list-group">
+      <li class="list-group-item list-group-item-info">
+        Companies
+      </li>
+
+      <% @project.companies.each do |company| %>
+        <li class="list-group-item">
+          <a href="/companies/<%= company.id %>">
+            <%= company.hours_available %>
+          </a>
+          <div class="btn-group btn-group-xs pull-right">
+            <a href="/companies/<%= company.id %>" class="btn btn-primary">
+              <i class="fa fa-search-plus"></i>
+            </a>
+            <a href="/companies/<%= company.id %>/edit" class="btn btn-warning">
+              <i class="fa fa-edit"></i>
+            </a>
+            <a href="/delete_company/<%= company.id %>" class="btn btn-danger" rel="nofollow">
+              <i class="fa fa-trash-o"></i>
+            </a>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+
+<!-- A Project has many clients -->
+
+<div class="row">
+  <div class="col-md-12">
+    <ul class="list-group">
+      <li class="list-group-item list-group-item-info">
+        Clients
+      </li>
+
+      <% @project.clients.each do |client| %>
+        <li class="list-group-item">
+          <a href="/clients/<%= client.id %>">
+            <%= client.email %>
+          </a>
+          <div class="btn-group btn-group-xs pull-right">
+            <a href="/clients/<%= client.id %>" class="btn btn-primary">
+              <i class="fa fa-search-plus"></i>
+            </a>
+            <a href="/clients/<%= client.id %>/edit" class="btn btn-warning">
+              <i class="fa fa-edit"></i>
+            </a>
+            <a href="/delete_client/<%= client.id %>" class="btn btn-danger" rel="nofollow">
+              <i class="fa fa-trash-o"></i>
+            </a>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
