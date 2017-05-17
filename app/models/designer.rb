@@ -1,6 +1,9 @@
 class Designer < ApplicationRecord
   # Direct associations
 
+  has_many   :assignments,
+             :dependent => :destroy
+
   # Indirect associations
 
   # Validations
