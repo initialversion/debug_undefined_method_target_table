@@ -5,6 +5,10 @@ class Item < ApplicationRecord
 
   # Indirect associations
 
+  has_one    :company,
+             :through => :project,
+             :source => :companies
+
   # Validations
 
 end
