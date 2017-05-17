@@ -33,7 +33,7 @@
           Client
         </label>
 
-        <input type="text" id="client_id" name="client_id" placeholder="Client" class="form-control" value="<%= @engagement.client_id %>">
+        <%= select_tag(:client_id, options_from_collection_for_select(Client.all, :id, :email, @engagement.client_id), :class => "form-control") %>
       </div>
 
       <button class="btn btn-success">
