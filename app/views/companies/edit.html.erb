@@ -1,0 +1,64 @@
+<!-- Validation failure messages -->
+<% if @company.errors.any? %>
+  <% @company.errors.full_messages.each do |message| %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<div class="page-header">
+  <h3>Edit Company #<%= @company.id %></h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <form action="/update_company/<%= @company.id %>" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for hours_available -->
+      <div class="form-group">
+        <label for="hours_available" class="control-label">
+          Hours available
+        </label>
+
+        <input type="text" id="hours_available" name="hours_available" placeholder="Hours available" class="form-control" value="<%= @company.hours_available %>">
+      </div>
+
+      <!-- Label and input for hours_used -->
+      <div class="form-group">
+        <label for="hours_used" class="control-label">
+          Hours used
+        </label>
+
+        <input type="text" id="hours_used" name="hours_used" placeholder="Hours used" class="form-control" value="<%= @company.hours_used %>">
+      </div>
+
+      <!-- Label and input for plan -->
+      <div class="form-group">
+        <label for="plan" class="control-label">
+          Plan
+        </label>
+
+        <input type="text" id="plan" name="plan" placeholder="Plan" class="form-control" value="<%= @company.plan %>">
+      </div>
+
+      <!-- Label and input for name -->
+      <div class="form-group">
+        <label for="name" class="control-label">
+          Name
+        </label>
+
+        <input type="text" id="name" name="name" placeholder="Name" class="form-control" value="<%= @company.name %>">
+      </div>
+
+      <button class="btn btn-warning">
+        Update Company
+      </button>
+      or
+      <a href="/companies/<%= @company.id %>">Cancel</a>
+    </form>
+  </div>
+</div>
