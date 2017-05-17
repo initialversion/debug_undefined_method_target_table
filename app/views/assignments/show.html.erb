@@ -6,10 +6,22 @@
   <div class="col-md-12 mb-2">
     <dl class="dl-horizontal">
       <dt>Project</dt>
-      <dd><%= @assignment.project_id %></dd>
+      <dd>
+        <% if @assignment.project.present? %>
+          <a href="/projects/<%= @assignment.project_id %>">
+            <%= @assignment.project.title %>
+          </a>
+        <% end %>
+      </dd>
 
       <dt>Designer</dt>
-      <dd><%= @assignment.designer_id %></dd>
+      <dd>
+        <% if @assignment.designer.present? %>
+          <a href="/designers/<%= @assignment.designer_id %>">
+            <%= @assignment.designer.email %>
+          </a>
+        <% end %>
+      </dd>
 
     </dl>
 

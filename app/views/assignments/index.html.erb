@@ -16,8 +16,20 @@
 
       <% @assignments.each do |assignment| %>
       <tr>
-        <td><%= assignment.project.title %></td>
-        <td><%= assignment.designer.email %></td>
+        <td>
+          <% if assignment.project.present? %>
+            <a href="/projects/<%= assignment.project.id %>">
+              <%= assignment.project.title %>
+            </a>
+          <% end %>
+        </td>
+        <td>
+          <% if assignment.designer.present? %>
+            <a href="/designers/<%= assignment.designer.id %>">
+              <%= assignment.designer.email %>
+            </a>
+          <% end %>
+        </td>
         <td>
           <a href="/assignments/<%= assignment.id %>" class="btn btn-primary">Show</a>
           <a href="/assignments/<%= assignment.id %>/edit" class="btn btn-warning">Edit</a>

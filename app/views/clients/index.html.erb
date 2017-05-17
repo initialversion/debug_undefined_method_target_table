@@ -23,7 +23,13 @@
         <td><%= client.password %></td>
         <td><%= client.first_name %></td>
         <td><%= client.last_name %></td>
-        <td><%= client.company.hours_available %></td>
+        <td>
+          <% if client.company.present? %>
+            <a href="/companies/<%= client.company.id %>">
+              <%= client.company.hours_available %>
+            </a>
+          <% end %>
+        </td>
         <td>
           <a href="/clients/<%= client.id %>" class="btn btn-primary">Show</a>
         </td>

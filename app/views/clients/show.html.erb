@@ -18,7 +18,13 @@
       <dd><%= @client.last_name %></dd>
 
       <dt>Company</dt>
-      <dd><%= @client.company_id %></dd>
+      <dd>
+        <% if @client.company.present? %>
+          <a href="/companies/<%= @client.company_id %>">
+            <%= @client.company.hours_available %>
+          </a>
+        <% end %>
+      </dd>
 
     </dl>
 

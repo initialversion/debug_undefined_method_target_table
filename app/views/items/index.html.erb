@@ -18,7 +18,13 @@
 
       <% @items.each do |item| %>
       <tr>
-        <td><%= item.project.title %></td>
+        <td>
+          <% if item.project.present? %>
+            <a href="/projects/<%= item.project.id %>">
+              <%= item.project.title %>
+            </a>
+          <% end %>
+        </td>
         <td><%= item.name %></td>
         <td><%= item.description %></td>
         <td><%= item.url %></td>
