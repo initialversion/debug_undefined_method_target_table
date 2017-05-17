@@ -1,6 +1,7 @@
 class EngagementsController < ApplicationController
   def index
-    @engagements = Engagement.page(params[:page]).per(10)
+    @q = Engagement.ransack(params[:q])
+    @engagements = @q.result(:distinct => true).includes(:project, :client).page(params[:page]).per(10)
 
     render("engagements/index.html.erb")
   end

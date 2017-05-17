@@ -1,6 +1,7 @@
 class AssignmentsController < ApplicationController
   def index
-    @assignments = Assignment.page(params[:page]).per(10)
+    @q = Assignment.ransack(params[:q])
+    @assignments = @q.result(:distinct => true).includes(:designer, :project).page(params[:page]).per(10)
 
     render("assignments/index.html.erb")
   end
