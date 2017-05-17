@@ -6,6 +6,10 @@ class Company < ApplicationRecord
 
   # Indirect associations
 
+  has_many   :projects,
+             :through => :clients,
+             :source => :projects
+
   has_many   :designers,
              :through => :projects,
              :source => :designers
