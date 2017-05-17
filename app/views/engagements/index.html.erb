@@ -17,7 +17,7 @@
       <% @engagements.each do |engagement| %>
       <tr>
         <td><%= engagement.project.title %></td>
-        <td><%= engagement.client_id %></td>
+        <td><%= engagement.client.email %></td>
         <td>
           <a href="/engagements/<%= engagement.id %>" class="btn btn-primary">Show</a>
           <a href="/engagements/<%= engagement.id %>/edit" class="btn btn-warning">Edit</a>
