@@ -1,6 +1,9 @@
 class Project < ApplicationRecord
   # Direct associations
 
+  has_many   :engagements,
+             :dependent => :destroy
+
   has_many   :assignments,
              :dependent => :destroy
 
