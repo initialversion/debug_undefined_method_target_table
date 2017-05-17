@@ -6,6 +6,10 @@ class Designer < ApplicationRecord
 
   # Indirect associations
 
+  has_many   :projects,
+             :through => :assignments,
+             :source => :project
+
   # Validations
 
   # Include default devise modules. Others available are:
