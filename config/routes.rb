@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root :to => "companies#index"
   # Routes for the Engagement resource:
   # CREATE
   get "/engagements/new", :controller => "engagements", :action => "new"
