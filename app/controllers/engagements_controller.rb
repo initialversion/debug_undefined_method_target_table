@@ -1,6 +1,6 @@
 class EngagementsController < ApplicationController
   def index
-    @engagements = Engagement.all
+    @engagements = Engagement.page(params[:page]).per(10)
 
     render("engagements/index.html.erb")
   end

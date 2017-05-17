@@ -1,6 +1,6 @@
 class DesignersController < ApplicationController
   def index
-    @designers = Designer.all
+    @designers = Designer.page(params[:page]).per(10)
   end
 
   def show

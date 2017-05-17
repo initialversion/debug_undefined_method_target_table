@@ -1,6 +1,6 @@
 class AssignmentsController < ApplicationController
   def index
-    @assignments = Assignment.all
+    @assignments = Assignment.page(params[:page]).per(10)
 
     render("assignments/index.html.erb")
   end
