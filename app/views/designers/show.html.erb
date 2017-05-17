@@ -1,0 +1,28 @@
+<div class="page-header">
+  <h3>Designer #<%= @designer.id %></h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12 mb-2">
+    <dl class="dl-horizontal">
+      <dt>Email</dt>
+      <dd><%= @designer.email %></dd>
+
+      <dt>Password</dt>
+      <dd><%= @designer.password %></dd>
+
+      <dt>First name</dt>
+      <dd><%= @designer.first_name %></dd>
+
+      <dt>Last name</dt>
+      <dd><%= @designer.last_name %></dd>
+
+    </dl>
+
+    <div class="btn-group btn-group-justified">
+      <a href="/designers" class="btn btn-primary">
+        Back
+      </a>
+    </div>
+  </div>
+</div>
